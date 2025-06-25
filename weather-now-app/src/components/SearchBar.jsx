@@ -1,9 +1,9 @@
-export default function SearchBar({ input, onInputChange, onSearch }) {
+export default function SearchBar({ input, onInputChange, onSearch, placeholder }) {
   return (
     <form onSubmit={onSearch} className="mb-6 w-full max-w-md flex">
       <input
         type="text"
-        placeholder="Enter city name"
+        placeholder={placeholder}
         value={input}
         onChange={(e) => onInputChange(e.target.value)}
         className="flex-grow px-4 py-2 border border-gray-300 rounded-l-xl focus:outline-none"

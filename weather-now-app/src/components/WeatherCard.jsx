@@ -1,4 +1,6 @@
 import useFetch from "../hooks/useFetch";
+import LoadingSpinner from "./LoadingSpinner";
+import WeatherStat from "./WeatherStat";
 
 export default function WeatherCard({ city }) {
   const API_KEY = import.meta.env.VITE_WEATHERAPI_KEY;
@@ -9,7 +11,8 @@ export default function WeatherCard({ city }) {
   if (loading)
     return (
       <div className="text-blue-600 text-center mt-10">
-        Loading current weather...
+        <LoadingSpinner />
+        <p>Loading weather data...</p>
       </div>
     );
   if (error)
@@ -49,15 +52,6 @@ export default function WeatherCard({ city }) {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function WeatherStat({ label, value }) {
-  return (
-    <div className="bg-blue-50 rounded-xl p-4 text-sm text-gray-600">
-      <p className="font-semibold">{label}</p>
-      <p className="text-xl font-bold text-blue-700">{value}</p>
     </div>
   );
 }

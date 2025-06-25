@@ -21,6 +21,7 @@ function App() {
         input={input}
         onInputChange={setInput}
         onSearch={handleSearch}
+        placeholder="Enter city name"
       />
 
       <WeatherCard city={city} />
